@@ -1,0 +1,27 @@
+# docs/conf.py
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
+
+project = 'Groww API Trading'
+author = 'Groww'
+
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'sphinx_rtd_theme',
+    'autoapi.extension',
+    'sphinxcontrib.httpdomain',  # For REST API documentation
+    'sphinxcontrib.openapi'      # For OpenAPI/Swagger documentation
+]
+
+# Theme settings
+html_theme = 'sphinx_rtd_theme'
+
+# AutoAPI settings
+autoapi_type = 'python'
+autoapi_dirs = ['../your_package_name']
+
+# OpenAPI settings
+openapi_spec_path = '../api_specs/openapi.yaml'  # Path to your OpenAPI spec
